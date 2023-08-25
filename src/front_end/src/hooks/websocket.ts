@@ -1,0 +1,7 @@
+interface userWebSocket {
+
+}
+
+export {
+    userWebSocket
+}

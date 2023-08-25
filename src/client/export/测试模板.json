@@ -1,0 +1,167 @@
+{
+    "task_1": {
+        "百度": {
+            "URL": "https://www.baidu.com/",
+            "assertion": [
+                "response.status_code==200"
+            ],
+            "body": {},
+            "header": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+            },
+            "params": {
+                "date": "2021-04-12"
+            },
+            "请求类型": "GET"
+        }
+    },
+    "task_2": {
+        "登录状态判断": {
+            "URL": "http://127.0.0.1:8000/api/inspection/loginJudge",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == '已登录'",
+                "content_json['username'] == 'username'"
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {},
+            "请求类型": "GET"
+        },
+        "获取源清单": {
+            "URL": "http://127.0.0.1:8000/api/inspection/source",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == 'success'",
+                "len(content_json['source']) != 0"
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {},
+            "请求类型": "GET"
+        },
+        "查看详情": {
+            "URL": "http://127.0.0.1:8000/api/inspection/detail",
+            "assertion": [
+                "response.status_code==200"
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {
+                "date": "2022-08-19 21:00:21"
+            },
+            "请求类型": "GET"
+        },
+        "查看状态": {
+            "URL": "http://127.0.0.1:8000/api/inspection/state",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == 'success'",
+                "isinstance(content_json['content'], list) "
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {},
+            "请求类型": "GET"
+        },
+        "查看时间点下状态": {
+            "URL": "http://127.0.0.1:8000/api/inspection/current",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == 'success'",
+                "isinstance(content_json['content'], list) "
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {
+                "date": "2022-08-19 21:00:21"
+            },
+            "请求类型": "GET"
+        },
+        "获取盗版清单": {
+            "URL": "http://127.0.0.1:8000/api/inspection/piracyList",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == 'success'",
+                "isinstance(content_json['content'], list) "
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {},
+            "请求类型": "GET"
+        },
+        "获取饼图": {
+            "URL": "http://127.0.0.1:8000/api/inspection/pieChart",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == 'success'",
+                "isinstance(content_json['content'], list) "
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {},
+            "请求类型": "GET"
+        },
+        "获取线图": {
+            "URL": "http://127.0.0.1:8000/api/inspection/lineChart",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == 'success'",
+                "isinstance(content_json['content'], list) ",
+                "isinstance(content_json['x_axis'], list) is true"
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {},
+            "请求类型": "GET"
+        },
+        "获取定时任务清单": {
+            "URL": "http://127.0.0.1:8000/api/inspection/scheduled",
+            "assertion": [
+                "response.status_code==200",
+                "content_json['message'] == 'success'",
+                "isinstance(content_json['content'], list) "
+            ],
+            "header": {
+                "cookie": {
+                    "sessionid": "4j8cr9dp18lvmscmb2khmkhd082s364r"
+                }
+            },
+            "body": {},
+            "params": {},
+            "请求类型": "GET"
+        }
+    }
+}

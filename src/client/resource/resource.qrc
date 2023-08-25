@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="img">
+    <file>删除组.png</file>
+    <file>新增任务组.png</file>
+    <file>新增.png</file>
+    <file>导出.png</file>
+    <file>导入.png</file>
+    <file>编辑.png</file>
+    <file>删除.png</file>
+    <file>运行.png</file>
+  </qresource>
+</RCC>
